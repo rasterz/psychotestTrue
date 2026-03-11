@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профориентационный тест RIASEC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="test-wrapper">
+        <section class="hero">
+            <h1>Профориентационный тест</h1>
+            <p>
+                Отметьте, какие виды деятельности вам нравятся.
+                Отвечайте спокойно и интуитивно.
+            </p>
+        </section>
+
+        <form method="POST" action="/result" class="test-form">
+            <section class="name-card profile-card">
+                <h2 class="profile-title">Информация о респонденте</h2>
+                <p class="profile-subtitle">
+                    Заполните основные данные перед началом теста.
+                </p>
+
+                <div class="form-grid">
+                    <div class="field-group">
+                        <label for="name">Имя <span class="required-mark">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="Введите имя" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="age">Возраст <span class="required-mark">*</span></label>
+                        <input type="number" id="age" name="age" min="10" max="100" placeholder="Например: 16" required>
+                    </div>
+
+                    <div class="field-group field-group-full">
+                        <label for="contact">Способ связи</label>
+                        <input type="text" id="contact" name="contact" placeholder="@telegram_username или номер телефона">
+                        <small class="field-note">
+                            Необязательно. Но без контакта с вами будет невозможно связаться.
+                        </small>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="city">Город</label>
+                        <input type="text" id="city" name="city" placeholder="Например: Москва">
+                    </div>
+
+                    <div class="field-group">
+                        <label for="category">Категория <span class="required-mark">*</span></label>
+                        <select id="category" name="category" required>
+                            <option value="" disabled selected>Выберите вариант</option>
+                            <option value="Родитель подростка">Родитель подростка</option>
+                            <option value="Взрослый">Взрослый</option>
+                            <option value="Подросток">Подросток</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            {% for q in questions %}
+            <section class="question-card">
+                <div class="question-number">Вопрос {{ loop.index }}</div>
+                <h2 class="question-text">{{ q }}</h2>
+
+                <div class="answer-grid">
+    <label class="answer-option">
+        <input type="radio" name="q{{ loop.index0 }}" value="yes" required>
+        <span class="answer-box yes-box">
+            <span class="answer-title">Да</span>
+            <span class="answer-subtitle">Мне это нравится</span>
+        </span>
+    </label>
+
+    <label class="answer-option">
+        <input type="radio" name="q{{ loop.index0 }}" value="no" required>
+        <span class="answer-box no-box">
+            <span class="answer-title">Нет</span>
+            <span class="answer-subtitle">Мне это не подходит</span>
+        </span>
+    </label>
+</div>
+            </section>
+            {% endfor %}
+
+            <div class="submit-wrap">
+                <button type="submit" class="submit-btn">Завершить тест</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

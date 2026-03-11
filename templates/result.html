@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты теста RIASEC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="test-wrapper">
+        <section class="result-card">
+            <h3 class="result-section-title">Данные респондента</h3>
+            <div class="score-grid">
+                <div class="score-box">
+                    <div class="score-letter">Имя</div>
+                    <div class="score-value" style="font-size:24px;">{{ name }}</div>
+                 </div>
+                <div class="score-box">
+                    <div class="score-letter">Возраст</div>
+                    <div class="score-value" style="font-size:24px;">{{ age }}</div>
+                 </div>
+                <div class="score-box">
+                    <div class="score-letter">Категория</div>
+                    <div class="score-value" style="font-size:24px;">{{ category }}</div>
+                 </div>
+            </div>
+        </section>
+        <section class="hero">
+            <h1>Ваш результат</h1>
+            <p>
+                Тест завершён. Ниже показан ваш код личности и распределение баллов по шкалам RIASEC.
+            </p>
+        </section>
+
+        <section class="result-card main-result-card">
+            <div class="result-badge">Итоговый профиль</div>
+            <h2 class="result-code">{{ code }}</h2>
+            <p class="result-code-text">Ваш код личности по Холланду</p>
+        </section>
+
+        <section class="result-card">
+            <h3 class="result-section-title">Баллы по шкалам</h3>
+
+            <div class="score-grid">
+                {% for key, value in scores.items() %}
+                <div class="score-box score-{{ key }}">
+                    <div class="score-letter">{{ key }}</div>
+                    <div class="score-value">{{ value }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="result-card">
+            <h3 class="result-section-title">Статус отчёта</h3>
+            <div class="status-box success-status">
+                PDF-отчёт создан.
+            </div>
+        </section>
+
+        <div class="submit-wrap">
+            <a href="/" class="submit-btn result-btn">Пройти тест заново</a>
+        </div>
+    </main>
+</body>
+</html>
