@@ -3,8 +3,8 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.env
 .idea/
 .vscode/
 *.log
-instance/
+result_*.pdf
+gunicorn.ctl
