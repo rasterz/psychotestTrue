@@ -10,10 +10,6 @@
     <main class="test-wrapper">
         <section class="hero">
             <h1>Профориентационный тест</h1>
-            <p>
-                Отметьте, какие виды деятельности вам нравятся.
-                Отвечайте спокойно и интуитивно.
-            </p>
         </section>
 
         <form method="POST" action="/result" class="test-form">
@@ -38,7 +34,7 @@
                         <label for="contact">Способ связи</label>
                         <input type="text" id="contact" name="contact" placeholder="@telegram_username или номер телефона">
                         <small class="field-note">
-                            Необязательно. Но без контакта с вами будет невозможно связаться.
+                            Необязательно. Но без контакта нам некуда будет прислать результаты диагностики.
                         </small>
                     </div>
 
@@ -51,14 +47,18 @@
                         <label for="category">Категория <span class="required-mark">*</span></label>
                         <select id="category" name="category" required>
                             <option value="" disabled selected>Выберите вариант</option>
-                            <option value="Родитель подростка">Родитель подростка</option>
                             <option value="Взрослый">Взрослый</option>
                             <option value="Подросток">Подросток</option>
                         </select>
                     </div>
                 </div>
             </section>
-
+            <section class="intro-card test-intro-card">
+                <h2 class="intro-title">Определение профессионального типа личности</h2>
+                <p class="intro-subtitle">
+                    Отметьте, какие виды деятельности вам нравятся. Отвечайте спокойно и интуитивно.
+                </p>
+            </section>
             {% for q in questions %}
             <section class="question-card">
                 <div class="question-number">Вопрос {{ loop.index }}</div>
