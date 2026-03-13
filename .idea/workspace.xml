@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="Test age logic, image change.&#10;Fix minor bugs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test2.html" afterDir="false" />
-    </list>
+    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="test 2, delete red color from second choice. All green" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773439806506</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="test 2, delete red color from second choice. All green">
+      <option name="closed" value="true" />
+      <created>1773440943994</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773440943994</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +176,7 @@
     <MESSAGE value="Change color palette to emerald" />
     <MESSAGE value="test 2.0" />
     <MESSAGE value="Test age logic, image change.&#10;Fix minor bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test age logic, image change.&#10;Fix minor bugs" />
+    <MESSAGE value="test 2, delete red color from second choice. All green" />
+    <option name="LAST_COMMIT_MESSAGE" value="test 2, delete red color from second choice. All green" />
   </component>
 </project>
