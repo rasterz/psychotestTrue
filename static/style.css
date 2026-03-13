@@ -1123,3 +1123,15 @@ body.modal-open {
     gap: 16px;
     margin-top: 30px;
 }
+
+/* Стили для второго теста (парный выбор) */
+
+.pair-box {
+    background: rgba(255,255,255,0.08);
+}
+
+.answer-option input:checked + .pair-box {
+    background: linear-gradient(135deg, rgba(24,115,88,0.38), rgba(109,211,176,0.18));
+    border-color: rgba(122,232,192,0.9);
+    box-shadow: 0 0 0 5px rgba(122,232,192,0.12);
+}

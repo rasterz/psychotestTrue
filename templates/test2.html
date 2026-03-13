@@ -33,7 +33,7 @@
                 <div class="answer-grid">
                     <label class="answer-option">
                         <input type="radio" name="q{{ loop.index0 }}" value="{{ q.left_type }}" required>
-                        <span class="answer-box yes-box">
+                        <span class="answer-box pair-box">
                             <span class="answer-title">{{ q.left_text }}</span>
                             <span class="answer-subtitle">Выбрать этот вариант</span>
                         </span>
@@ -41,7 +41,7 @@
 
                     <label class="answer-option">
                         <input type="radio" name="q{{ loop.index0 }}" value="{{ q.right_type }}" required>
-                        <span class="answer-box no-box">
+                        <span class="answer-box pair-box">
                             <span class="answer-title">{{ q.right_text }}</span>
                             <span class="answer-subtitle">Выбрать этот вариант</span>
                         </span>
