@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="Change color palette to emerald">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="test 2.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/interpretations.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/interpretations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/pdf_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/pdf_report.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/result_Gosha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/result_Катков.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/result_Каток.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/result_Макксим.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/result_Максим тест.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/result_Максим.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/result_Максим.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/scoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/scoring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/result_Максим.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/static/landing.css" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/static/landing.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/telegram_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/telegram_sender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/templates/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/landing.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,20 +60,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.app.executor": "Run",
-    "Python.interpretations.executor": "Run",
-    "Python.pdf_report.executor": "Run",
-    "Python.questions.executor": "Run",
-    "Python.telegram_sender.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.interpretations.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pdf_report.executor&quot;: &quot;Run&quot;,
+    &quot;Python.questions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.telegram_sender.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Админ\PycharmProjects\phychotest\static\images" />
@@ -150,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773328165968</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test 2.0">
+      <option name="closed" value="true" />
+      <created>1773369523582</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1773369523582</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,6 +169,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="Change color palette to emerald" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change color palette to emerald" />
+    <MESSAGE value="test 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="test 2.0" />
   </component>
 </project>
