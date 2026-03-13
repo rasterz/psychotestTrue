@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Карта интересов — часть 3</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<main class="test-wrapper">
+
+<form method="POST" action="/result" class="test-form">
+
+<input type="hidden" name="name" value="{{ name }}">
+<input type="hidden" name="age" value="{{ age }}">
+<input type="hidden" name="contact" value="{{ contact }}">
+<input type="hidden" name="city" value="{{ city }}">
+<input type="hidden" name="category" value="{{ category }}">
+
+<section class="hero">
+<h1>Профориентационный тест</h1>
+</section>
+
+<section class="intro-card test-intro-card">
+<h2 class="intro-title">Карта интересов</h2>
+<p class="intro-subtitle">
+Часть 3 из 3. Оцените, насколько вам нравится каждый вид деятельности.
+</p>
+<p class="profile-subtitle">
+1 — очень не нравится, 2 — не нравится, 3 — безразлично, 4 — нравится, 5 — очень нравится
+</p>
+</section>
+
+{% for q in questions %}
+
+<section class="question-card question-card-left">
+
+<div class="question-number">
+Вопрос {{ loop.index }}
+</div>
+
+<h2 class="question-text question-text-small">
+{{ q }}
+</h2>
+
+<div class="scale-grid">
+
+    <label class="scale-option">
+        <input type="radio" name="iq{{ loop.index0 }}" value="1" required>
+        <span class="scale-box"><span class="scale-value">1</span></span>
+    </label>
+
+    <label class="scale-option">
+        <input type="radio" name="iq{{ loop.index0 }}" value="2" required>
+        <span class="scale-box"><span class="scale-value">2</span></span>
+    </label>
+
+    <label class="scale-option">
+        <input type="radio" name="iq{{ loop.index0 }}" value="3" required>
+        <span class="scale-box"><span class="scale-value">3</span></span>
+    </label>
+
+    <label class="scale-option">
+        <input type="radio" name="iq{{ loop.index0 }}" value="4" required>
+        <span class="scale-box"><span class="scale-value">4</span></span>
+    </label>
+
+    <label class="scale-option">
+        <input type="radio" name="iq{{ loop.index0 }}" value="5" required>
+        <span class="scale-box"><span class="scale-value">5</span></span>
+    </label>
+
+</div>
+
+<p class="scale-hint">
+    1 — очень не нравится · 3 — безразлично · 5 — очень нравится
+</p>
+
+</section>
+
+{% endfor %}
+
+<div class="submit-wrap">
+<button type="submit" class="submit-btn">
+Завершить тест →
+</button>
+</div>
+
+</form>
+
+</main>
+
+</body>
+</html>

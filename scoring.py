@@ -1,21 +1,63 @@
 types = ["R", "I", "A", "S", "E", "C"]
 
 def calculate_riasec(answers):
-
-    scores = {
-        "R":0,
-        "I":0,
-        "A":0,
-        "S":0,
-        "E":0,
-        "C":0
-    }
+    scores = {t: 0 for t in types}
 
     for i, answer in enumerate(answers):
-
         if answer == "yes":
-
             t = types[i % 6]
             scores[t] += 1
 
     return scores
+
+
+def calculate_pairs_riasec(pair_answers):
+    scores = {t: 0 for t in types}
+
+    for answer in pair_answers:
+        if answer in scores:
+            scores[answer] += 1
+
+    return scores
+
+def calculate_interest_map(answers):
+    results = []
+
+    for i in range(20):
+        score = answers[i] + answers[i+20] + answers[i+40]
+
+        if score >= 9:
+            level = "Высокий интерес"
+        elif score >= 7:
+            level = "Средний интерес"
+        else:
+            level = "Слабый интерес"
+
+        results.append({
+            "scale": i,
+            "score": score,
+            "level": level
+        })
+
+    return results
+
+def calculate_interest_map_adult(answers):
+    results = []
+
+    for i in range(20):
+        score = answers[i] + answers[i + 20] + answers[i + 40]
+
+        if score >= 9:
+            level = "Высокий интерес"
+        elif score >= 7:
+            level = "Средний интерес"
+        else:
+            level = "Слабый интерес"
+
+        results.append({
+            "scale": i,
+            "score": score,
+            "level": level
+        })
+
+    return results

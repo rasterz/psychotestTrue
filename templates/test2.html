@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профориентационный тест — часть 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="test-wrapper">
+        <section class="hero">
+            <h1>Профориентационный тест</h1>
+        </section>
+
+        <form method="POST" action="/test3" class="test-form">
+            <input type="hidden" name="name" value="{{ name }}">
+            <input type="hidden" name="age" value="{{ age }}">
+            <input type="hidden" name="contact" value="{{ contact }}">
+            <input type="hidden" name="city" value="{{ city }}">
+            <input type="hidden" name="category" value="{{ category }}">
+
+            <section class="intro-card test-intro-card">
+                <h2 class="intro-title">Методика Холланда</h2>
+                <p class="intro-subtitle">
+                    Часть 2 из 3. Из каждой пары выберите тот вид деятельности, который вам ближе и интереснее.
+                </p>
+            </section>
+
+            {% for q in questions %}
+            <section class="question-card">
+                <div class="question-number">Пара {{ loop.index }}</div>
+
+                <div class="answer-grid">
+                    <label class="answer-option">
+                        <input type="radio" name="q{{ loop.index0 }}" value="{{ q.left_type }}" required>
+                        <span class="answer-box yes-box">
+                            <span class="answer-title">{{ q.left_text }}</span>
+                            <span class="answer-subtitle">Выбрать этот вариант</span>
+                        </span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q{{ loop.index0 }}" value="{{ q.right_type }}" required>
+                        <span class="answer-box no-box">
+                            <span class="answer-title">{{ q.right_text }}</span>
+                            <span class="answer-subtitle">Выбрать этот вариант</span>
+                        </span>
+                    </label>
+                </div>
+            </section>
+            {% endfor %}
+
+            <div class="submit-wrap">
+                <button type="submit" class="submit-btn">
+                    Перейти к следующей методике →
+                </button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

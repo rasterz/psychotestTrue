@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профориентолог Вероника Илясова</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='landing.css') }}">
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <div class="hero-badge">Профориентация для подростков</div>
+
+            <h1>
+                Понять свои сильные стороны,
+                интересы и выбрать направление
+                без лишней тревоги
+            </h1>
+
+            <p class="hero-text">
+                Если вам важно, чтобы с ребенком работали бережно - вам сюда.
+                Помощь в выборе профессии с учётом индивидуальных особенностей подростка.
+            </p>
+
+            <div class="hero-buttons">
+                <a class="btn btn-primary" href="#contact">Записаться</a>
+                <a class="btn btn-secondary" href="/test">Пройти тест</a>
+            </div>
+        </div>
+
+        <div class="hero-image-wrap">
+            <div class="hero-image-card">
+                <img src="{{ url_for('static', filename='images/veronika-hero.jpg') }}"
+                     alt="Вероника Илясова">
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section class="about">
+            <div class="container about-grid">
+                <div class="about-image-wrap">
+                    <div class="about-image-card">
+                        <img src="{{ url_for('static', filename='images/veronika-about.jpg') }}"
+                             alt="Профориентолог Вероника Илясова">
+                    </div>
+                </div>
+
+                <div class="about-content">
+
+                    <div class="section-label">О специалисте</div>
+
+                    <h2>Вероника Илясова</h2>
+
+                    <div class="about-tags">
+                        <span>магистр педагогики</span>
+                        <span>профориентолог</span>
+                        <span>автор курса финансовой грамотности</span>
+                    </div>
+
+                    <div class="quote-card">
+                        <div class="quote-mark">“</div>
+                        <p class="about-quote">
+                            Я рядом, чтобы этот путь можно было пройти спокойно
+                        </p>
+                    </div>
+
+                    <p class="about-text">
+                        Я помогаю подросткам 8–11 классов услышать себя и выбрать направление,
+                        в котором им будет наиболее гармонично и успешно развиваться.
+                        Без спешки, без давления и без навязывания решений.
+                        <strong>Со мной надёжно, со мной не страшно.</strong>
+                    </p>
+
+                    <p class="about-text">
+                        В работе я опираюсь на внимательное отношение к личности подростка,
+                        его интересам, склонностям и особенностям мышления.
+                    </p>
+
+                </div>
+    </section>
+
+<section class="consultations">
+    <div class="container">
+        <div class="consultations-header">
+            <div class="section-label">Консультации</div>
+            <h2>Консультации по профориентации</h2>
+            <p class="consultations-lead">
+                Пакет консультаций включает три встречи. За это время обычно удаётся
+                определить 3–5 профессий и направлений, которые действительно подходят вашему ребёнку.
+            </p>
+        </div>
+
+        <div class="consultations-grid">
+            <div class="consultation-card">
+                <div class="consultation-step">01</div>
+                <h3>Установочная консультация</h3>
+                <p>
+                    Знакомимся, выясняем запрос, подбираю тесты под запрос.
+                </p>
+            </div>
+
+            <div class="consultation-card">
+                <div class="consultation-step">02</div>
+                <h3>Диагностическая консультация</h3>
+                <p>
+                    Определяем личностные особенности ребёнка, его ведущие интересы
+                    и профессиональный тип личности.
+                </p>
+            </div>
+
+            <div class="consultation-card">
+                <div class="consultation-step">03</div>
+                <h3>Углублённая консультация</h3>
+                <p>
+                    Подбирается индивидуально под каждого: более глубоко прорабатываем запрос.
+                    Это может быть работа с мотивацией, постановка целей, подбор образовательного маршрута,
+                    поиск призвания и другое.
+                </p>
+            </div>
+        </div>
+
+        <div class="consultations-price">
+            <div class="consultations-price-label">Стоимость пакета из трёх консультаций</div>
+            <div class="consultations-price-value">8000 рублей</div>
+        </div>
+    </div>
+</section>
+
+<section class="advantages-section">
+    <div class="container">
+        <div class="advantages">
+
+            <div class="advantages-header">
+                <div class="section-label">Преимущества</div>
+                <h2>Преимущества работы с профориентологом</h2>
+                <p>
+                    Поддержка подростков 8–11 классов в выборе профессии:
+                    индивидуальный подход, снижение тревоги и уверенность в принятии решений.
+                </p>
+            </div>
+
+            <div class="advantages-grid">
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">✓</div>
+                    <h3>Индивидуальный подход</h3>
+                    <p>
+                        Помощь каждому подростку с учётом его особенностей
+                        и потребностей.
+                    </p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">✓</div>
+                    <h3>Снижение тревоги</h3>
+                    <p>
+                        Создание комфортной атмосферы для принятия
+                        важных решений.
+                    </p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">✓</div>
+                    <h3>Помощь в выборе направления</h3>
+                    <p>
+                        Поддержка в определении реальных профессиональных
+                        интересов и возможностей.
+                    </p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">✓</div>
+                    <h3>Уверенность в выборе</h3>
+                    <p>
+                        Помощь в преодолении страха перед выбором профессии
+                        и поддержка в принятии обоснованных решений.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="final-info-section">
+    <div class="container">
+        <div class="final-info-layout">
+
+            <div class="final-info-intro">
+                <div class="section-label">Профориентация 8–11 классы</div>
+                <h2>Профориентация для подростков 8–11 классов</h2>
+                <p class="final-info-lead">
+                    Совместная работа с подростком и его родителями, направленная
+                    на понимание интересов и сильных сторон, снижение тревоги
+                    и выбор реальных направлений.
+                </p>
+            </div>
+
+            <div class="final-info-grid">
+                <div class="final-info-card">
+                    <h3>Индивидуальные консультации</h3>
+                    <p>
+                        Консультации возможны в формате онлайн
+                        или в уютном кабинете в г. Санкт-Петербург.
+                    </p>
+                </div>
+
+                <div class="final-info-card">
+                    <h3>Стоимость услуг</h3>
+                    <p>
+                        Пакет из трёх консультаций стоит
+                        <strong>8000 рублей</strong>.
+                    </p>
+                </div>
+
+                <div class="final-info-card final-info-card-wide">
+                    <h3>Процесс работы</h3>
+                    <p>
+                        На первой встрече я беседую с родителем, а затем с ребёнком.
+                        На последующих консультациях работаю только с ребёнком.
+                        По окончании работы родителям передаю файл
+                        со всеми результатами диагностики и рекомендациями.
+                    </p>
+                </div>
+
+                <div class="final-info-card final-info-card-accent">
+                    <h3>Уникальность подхода</h3>
+                    <p>
+                        Помогаю почувствовать уверенность в выборе
+                        и сделать первый шаг без страха, учитывая
+                        индивидуальные особенности каждого подростка.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="contact-card">
+            <h2>Готовы обсудить ваш запрос?</h2>
+
+            <p class="contact-text">
+                Спокойно разберём профессиональные склонности, интересы и возможные
+                направления развития. Можно написать в Telegram или сначала пройти
+                профориентационный тест.
+            </p>
+
+            <div class="contact-buttons">
+
+                <a class="btn btn-secondary"
+                   href="https://t.me/Ilyasovamentor"
+                   target="_blank">
+                   Написать в Telegram
+                </a>
+
+                <button type="button"
+                        class="btn btn-secondary consultation-open-btn"
+                        id="openConsultationModal">
+                    Записаться на консультацию
+                </button>
+
+                <div class="test-button-wrap">
+                    <a class="btn btn-primary test-tooltip-trigger"
+                       href="/test">
+                       Пройти тест
+                    </a>
+
+                    <div class="test-tooltip">
+                        <strong>Что даёт тест?</strong><br>
+                        Профориентационный тест по модели Holland Occupational Themes помогает
+                        лучше понять интересы подростка и увидеть направления, которые могут
+                        подойти ему больше всего. Сейчас доступен первый этап из трёх.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-title">Вероника Илясова</div>
+                <p class="footer-text">
+                    Профориентация, консультации и помощь в выборе профессионального направления.
+                </p>
+            </div>
+
+            <div class="footer-contacts">
+
+                <div class="footer-subtitle">Контакты</div>
+
+                <a href="mailto:ilyasovamentor@yandex.ru" class="footer-link footer-contact">
+
+                    <svg class="footer-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 5h18v14H3V5z" stroke="currentColor" stroke-width="1.6"/>
+                        <path d="M3 6l9 7 9-7" stroke="currentColor" stroke-width="1.6"/>
+                    </svg>
+
+                    ilyasovamentor@yandex.ru
+                </a>
+
+                <a href="https://t.me/Ilyasovamentor"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="footer-link footer-contact">
+
+                    <svg class="footer-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M22 3L11 14" stroke="currentColor" stroke-width="1.6"/>
+                        <path d="M22 3L15 21L11 14L3 10L22 3Z"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linejoin="round"/>
+                    </svg>
+
+                    Telegram
+                </a>
+
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-details">
+            <p>ИП Илясова Вероника Ивановна</p>
+            <p>ОГРНИП 326784700049688</p>
+            <p>ИНН 352402248527</p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Вероника Илясова. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<div class="consultation-modal" id="consultationModal" aria-hidden="true">
+    <div class="consultation-modal__backdrop" id="consultationModalBackdrop"></div>
+
+    <div class="consultation-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="consultationModalTitle">
+        <button type="button" class="consultation-modal__close" id="closeConsultationModal" aria-label="Закрыть">
+            ×
+        </button>
+
+        <div class="consultation-modal__header">
+            <div class="section-label">Запись на консультацию</div>
+            <h2 id="consultationModalTitle">Оставьте заявку</h2>
+            <p>
+                Выберите удобный способ связи, оставьте свои данные и кратко опишите запрос.
+            </p>
+        </div>
+
+        <form class="consultation-form" id="consultationForm">
+    <div class="consultation-form__group">
+        <div class="consultation-form__label">Как с вами связаться?</div>
+
+        <div class="consultation-methods">
+            <label class="consultation-method">
+                <input type="radio" name="contact_method" value="telegram" checked>
+                <span>Telegram</span>
+            </label>
+
+            <label class="consultation-method">
+                <input type="radio" name="contact_method" value="max">
+                <span>Max</span>
+            </label>
+
+            <label class="consultation-method">
+                <input type="radio" name="contact_method" value="vk">
+                <span>VK</span>
+            </label>
+
+            <label class="consultation-method">
+                <input type="radio" name="contact_method" value="phone">
+                <span>Телефон</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="consultation-form__row">
+        <div class="consultation-form__group">
+            <label class="consultation-form__label" for="clientName">Имя</label>
+            <input class="consultation-input" type="text" id="clientName" name="first_name" placeholder="Имя" required>
+        </div>
+
+        <div class="consultation-form__group">
+            <label class="consultation-form__label" for="clientSurname">Фамилия</label>
+            <input class="consultation-input" type="text" id="clientSurname" name="last_name" placeholder="Фамилия" required>
+        </div>
+    </div>
+
+    <div class="consultation-form__group">
+        <label class="consultation-form__label" for="contactValue" id="contactValueLabel">Telegram</label>
+        <input class="consultation-input"
+               type="text"
+               id="contactValue"
+               name="contact_value"
+               placeholder="@username"
+               required>
+    </div>
+
+    <div class="consultation-form__group">
+        <label class="consultation-form__label" for="consultationMessage">Пожелания по профориентации</label>
+        <textarea class="consultation-textarea"
+                  id="consultationMessage"
+                  name="message"
+                  rows="5"
+                  placeholder="Опишите ваши пожелания по профориентации, например возраст ребенка и в какой срок желаете провести работу"></textarea>
+    </div>
+
+    <div class="consultation-form__actions">
+        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+    </div>
+</form>
+    </div>
+</div>
+
+<script>
+    const consultationModal = document.getElementById('consultationModal');
+    const openConsultationModalBtn = document.getElementById('openConsultationModal');
+    const closeConsultationModalBtn = document.getElementById('closeConsultationModal');
+    const consultationModalBackdrop = document.getElementById('consultationModalBackdrop');
+    const consultationForm = document.getElementById('consultationForm');
+    const contactValueInput = document.getElementById('contactValue');
+    const contactValueLabel = document.getElementById('contactValueLabel');
+    const methodInputs = document.querySelectorAll('input[name="contact_method"]');
+
+    function openConsultationModal() {
+        consultationModal.classList.add('is-open');
+        consultationModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+    }
+
+    function closeConsultationModal() {
+        consultationModal.classList.remove('is-open');
+        consultationModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+    }
+
+    function updateContactField(method) {
+        if (method === 'telegram') {
+            contactValueLabel.textContent = 'Telegram';
+            contactValueInput.placeholder = '@username';
+            contactValueInput.type = 'text';
+        }
+
+        if (method === 'vk') {
+            contactValueLabel.textContent = 'VK';
+            contactValueInput.placeholder = 'Ссылка или имя пользователя VK';
+            contactValueInput.type = 'text';
+        }
+
+        if (method === 'max') {
+            contactValueLabel.textContent = 'Телефон для Max';
+            contactValueInput.placeholder = '+7 (___) ___-__-__';
+            contactValueInput.type = 'tel';
+        }
+
+        if (method === 'phone') {
+            contactValueLabel.textContent = 'Телефон';
+            contactValueInput.placeholder = '+7 (___) ___-__-__';
+            contactValueInput.type = 'tel';
+        }
+    }
+
+    openConsultationModalBtn.addEventListener('click', openConsultationModal);
+    closeConsultationModalBtn.addEventListener('click', closeConsultationModal);
+    consultationModalBackdrop.addEventListener('click', closeConsultationModal);
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && consultationModal.classList.contains('is-open')) {
+            closeConsultationModal();
+        }
+    });
+
+    methodInputs.forEach((input) => {
+        input.addEventListener('change', function() {
+            updateContactField(this.value);
+        });
+    });
+
+    consultationForm.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const submitButton = consultationForm.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Отправка...';
+
+    try {
+        const selectedMethod = document.querySelector('input[name="contact_method"]:checked').value;
+
+        const payload = {
+            first_name: document.getElementById('clientName').value.trim(),
+            last_name: document.getElementById('clientSurname').value.trim(),
+            contact_method: selectedMethod,
+            contact_value: document.getElementById('contactValue').value.trim(),
+            message: document.getElementById('consultationMessage').value.trim()
+        };
+
+        const response = await fetch('/send-consultation-request', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.ok) {
+            throw new Error(result.error || 'Не удалось отправить заявку');
+        }
+
+        alert('Заявка отправлена. Мы свяжемся с вами выбранным способом.');
+        closeConsultationModal();
+        consultationForm.reset();
+        document.querySelector('input[name="contact_method"][value="telegram"]').checked = true;
+        updateContactField('telegram');
+
+    } catch (error) {
+        alert(error.message || 'Произошла ошибка при отправке заявки');
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Отправить заявку';
+    }
+});
+
+    updateContactField('telegram');
+</script>
+
+</body>
+</html>

@@ -51,6 +51,24 @@
             </div>
         </section>
 
+        {% if interest_results %}
+        <section class="result-card">
+            <h3 class="result-section-title">Карта интересов</h3>
+
+            <div class="score-grid">
+                {% for item in interest_results[:6] %}
+                <div class="score-box">
+                    <div class="score-letter" style="font-size:18px;">{{ item.name }}</div>
+                    <div class="score-value" style="font-size:28px;">{{ item.score }}</div>
+                    <div style="margin-top:8px; font-size:14px; color:#dcebe4;">
+                        {{ item.level }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        </section>
+        {% endif %}
+
         <section class="result-card">
             <h3 class="result-section-title">Статус отчёта</h3>
             <div class="status-box success-status">
@@ -58,9 +76,231 @@
             </div>
         </section>
 
-        <div class="submit-wrap">
-            <a href="/" class="submit-btn result-btn">Пройти тест заново</a>
-        </div>
+        <div class="result-actions">
+            <a href="/" class="result-btn submit-btn secondary-btn">На главную</a>
+
+            <button type="button"
+            class="result-btn submit-btn consultation-open-btn"
+            id="openConsultationModal">
+            Разобрать результаты на консультации
+            </button>
+
+</div>
     </main>
+
+<div class="consultation-modal" id="consultationModal" aria-hidden="true">
+    <div class="consultation-modal__backdrop" id="consultationModalBackdrop"></div>
+
+    <div class="consultation-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="consultationModalTitle">
+        <button type="button" class="consultation-modal__close" id="closeConsultationModal" aria-label="Закрыть">
+            ×
+        </button>
+
+        <div class="consultation-modal__header">
+            <div class="section-label">Запись на консультацию</div>
+            <h2 id="consultationModalTitle">Оставьте заявку</h2>
+            <p>
+                Выберите удобный способ связи, оставьте свои данные и кратко опишите запрос.
+            </p>
+        </div>
+
+        <form class="consultation-form" id="consultationForm">
+            <div class="consultation-form__group">
+                <div class="consultation-form__label">Как с вами связаться?</div>
+
+                <div class="consultation-methods">
+                    <label class="consultation-method">
+                        <input type="radio" name="contact_method" value="telegram" checked>
+                        <span>Telegram</span>
+                    </label>
+
+                    <label class="consultation-method">
+                        <input type="radio" name="contact_method" value="max">
+                        <span>Max</span>
+                    </label>
+
+                    <label class="consultation-method">
+                        <input type="radio" name="contact_method" value="vk">
+                        <span>VK</span>
+                    </label>
+
+                    <label class="consultation-method">
+                        <input type="radio" name="contact_method" value="phone">
+                        <span>Телефон</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="consultation-form__row">
+                <div class="consultation-form__group">
+                    <label class="consultation-form__label" for="clientName">Имя</label>
+                    <input class="consultation-input" type="text" id="clientName" name="first_name" placeholder="Имя" required>
+                </div>
+
+                <div class="consultation-form__group">
+                    <label class="consultation-form__label" for="clientSurname">Фамилия</label>
+                    <input class="consultation-input" type="text" id="clientSurname" name="last_name" placeholder="Фамилия" required>
+                </div>
+            </div>
+
+            <div class="consultation-form__group">
+                <label class="consultation-form__label" for="contactValue" id="contactValueLabel">Telegram</label>
+                <input class="consultation-input"
+                       type="text"
+                       id="contactValue"
+                       name="contact_value"
+                       placeholder="@username"
+                       required>
+            </div>
+
+            <div class="consultation-form__group">
+                <label class="consultation-form__label" for="consultationMessage">Пожелания по профориентации</label>
+                <textarea class="consultation-textarea"
+                          id="consultationMessage"
+                          name="message"
+                          rows="5"
+                          placeholder="Опишите ваши пожелания по профориентации, например возраст ребенка и в какой срок желаете провести работу"></textarea>
+            </div>
+
+            <div class="consultation-form__actions">
+                <button type="submit" class="btn btn-primary">Отправить заявку</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+const testResultData = {
+    name: "{{ name }}",
+    age: "{{ age }}",
+    code: "{{ code }}"
+};
+</script>
+
+<script>
+    const consultationModal = document.getElementById('consultationModal');
+    const openConsultationModalBtn = document.getElementById('openConsultationModal');
+    const closeConsultationModalBtn = document.getElementById('closeConsultationModal');
+    const consultationModalBackdrop = document.getElementById('consultationModalBackdrop');
+    const consultationForm = document.getElementById('consultationForm');
+    const contactValueInput = document.getElementById('contactValue');
+    const contactValueLabel = document.getElementById('contactValueLabel');
+    const methodInputs = document.querySelectorAll('input[name="contact_method"]');
+
+    function openConsultationModal() {
+        consultationModal.classList.add('is-open');
+        consultationModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+    }
+
+    function closeConsultationModal() {
+        consultationModal.classList.remove('is-open');
+        consultationModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+    }
+
+    function updateContactField(method) {
+        if (method === 'telegram') {
+            contactValueLabel.textContent = 'Telegram';
+            contactValueInput.placeholder = '@username';
+            contactValueInput.type = 'text';
+        }
+
+        if (method === 'vk') {
+            contactValueLabel.textContent = 'VK';
+            contactValueInput.placeholder = 'Ссылка или имя пользователя VK';
+            contactValueInput.type = 'text';
+        }
+
+        if (method === 'max') {
+            contactValueLabel.textContent = 'Телефон для Max';
+            contactValueInput.placeholder = '+7 (___) ___-__-__';
+            contactValueInput.type = 'tel';
+        }
+
+        if (method === 'phone') {
+            contactValueLabel.textContent = 'Телефон';
+            contactValueInput.placeholder = '+7 (___) ___-__-__';
+            contactValueInput.type = 'tel';
+        }
+    }
+
+    openConsultationModalBtn.addEventListener('click', openConsultationModal);
+    closeConsultationModalBtn.addEventListener('click', closeConsultationModal);
+    consultationModalBackdrop.addEventListener('click', closeConsultationModal);
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && consultationModal.classList.contains('is-open')) {
+            closeConsultationModal();
+        }
+    });
+
+    methodInputs.forEach((input) => {
+        input.addEventListener('change', function() {
+            updateContactField(this.value);
+        });
+    });
+
+    consultationForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const submitButton = consultationForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Отправка...';
+
+        try {
+            const selectedMethod = document.querySelector('input[name="contact_method"]:checked').value;
+
+            const userMessage = document.getElementById('consultationMessage').value.trim();
+
+const payload = {
+    first_name: document.getElementById('clientName').value.trim(),
+    last_name: document.getElementById('clientSurname').value.trim(),
+    contact_method: selectedMethod,
+    contact_value: document.getElementById('contactValue').value.trim(),
+
+    message:
+`Заявка после прохождения теста
+
+Имя респондента: ${testResultData.name}
+Возраст: ${testResultData.age}
+Код личности: ${testResultData.code}
+
+Комментарий клиента:
+${userMessage}`
+};
+
+            const response = await fetch('/send-consultation-request', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await response.json();
+
+            if (!response.ok || !result.ok) {
+                throw new Error(result.error || 'Не удалось отправить заявку');
+            }
+
+            alert('Заявка отправлена. Мы свяжемся с вами выбранным способом.');
+            closeConsultationModal();
+            consultationForm.reset();
+            document.querySelector('input[name="contact_method"][value="telegram"]').checked = true;
+            updateContactField('telegram');
+
+        } catch (error) {
+            alert(error.message || 'Произошла ошибка при отправке заявки');
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Отправить заявку';
+        }
+    });
+
+    updateContactField('telegram');
+    document.getElementById("clientName").value = testResultData.name;
+</script>
+
 </body>
 </html>
