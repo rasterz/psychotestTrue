@@ -30,11 +30,21 @@ def test2():
     session["answers_part1"] = answers_part1
 
     # Сохраняем данные пользователя
+
     session["name"] = request.form.get("name")
-    session["age"] = request.form.get("age")
+
+    age_raw = request.form.get("age")
+    session["age"] = age_raw
+
     session["contact"] = request.form.get("contact")
     session["city"] = request.form.get("city")
-    session["category"] = request.form.get("category")
+
+    try:
+        age_number = int(age_raw)
+    except (TypeError, ValueError):
+        age_number = 0
+
+    session["category"] = "Подросток" if age_number < 18 else "Взрослый"
 
     return render_template(
         "test2.html",

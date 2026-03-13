@@ -537,5 +537,31 @@
     updateContactField('telegram');
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    if (!isMobile) return;
+
+    const tooltip = document.querySelector(".test-tooltip");
+    const buttonWrap = document.querySelector(".test-button-wrap");
+
+    if (!tooltip || !buttonWrap) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                tooltip.classList.add("mobile-tooltip-visible");
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.35
+    });
+
+    observer.observe(buttonWrap);
+});
+</script>
+
+
 </body>
 </html>

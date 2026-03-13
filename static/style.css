@@ -12,7 +12,7 @@ body {
     color: #f2f8f5;
     background:
         linear-gradient(135deg, rgba(7, 26, 22, 0.9), rgba(20, 72, 62, 0.78)),
-        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat fixed;
+        url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat fixed;
     min-height: 100vh;
     position: relative;
 }
