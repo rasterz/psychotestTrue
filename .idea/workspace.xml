@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="test 2, delete red color from second choice. All green">
+    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="brain in game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/static/landing.css" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/static/landing.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/templates/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/landing.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +179,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773441471821</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="brain in game">
+      <option name="closed" value="true" />
+      <created>1773539601604</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1773539601604</updated>
+    </task>
+    <task id="LOCAL-00013" summary="brain in game">
+      <option name="closed" value="true" />
+      <created>1773539906048</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1773539906048</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,6 +215,7 @@
     <MESSAGE value="test 2.0" />
     <MESSAGE value="Test age logic, image change.&#10;Fix minor bugs" />
     <MESSAGE value="test 2, delete red color from second choice. All green" />
-    <option name="LAST_COMMIT_MESSAGE" value="test 2, delete red color from second choice. All green" />
+    <MESSAGE value="brain in game" />
+    <option name="LAST_COMMIT_MESSAGE" value="brain in game" />
   </component>
 </project>
