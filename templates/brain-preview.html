@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест мозга</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='landing.css') }}">
+</head>
+<body>
+
+<section class="hero hero-brain">
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">Тестовая страница</div>
+
+            <h1>Проверка интерактивного мозга</h1>
+
+            <div class="hero-brain-inline hero-brain-inline-shifted">
+                <div class="brain-radial-anchor" id="brainRadialShell" data-level="0">
+                    <div class="brain-radial-backdrop" id="brainRadialBackdrop" aria-hidden="true"></div>
+
+                    <button class="brain-core-button" id="brainCoreButton" type="button" aria-expanded="false" aria-label="Открыть направления Холланда">
+                        <div class="hero-brain-mini"
+                             data-svg-url="{{ url_for('static', filename='images/brain-puzzle-layers.svg') }}"
+                             data-manifest-url="{{ url_for('static', filename='data/brain-puzzle-manifest.json') }}"
+                             data-fallback-url="{{ url_for('static', filename='images/brain-puzzle-preview-light.png') }}"
+                             aria-hidden="true">
+                        </div>
+                    </button>
+
+                    <div class="brain-core-hint" id="brainCoreHint">
+                        <div class="brain-core-hint__title">Запусти мыслительный процесс</div>
+                        <div class="brain-core-hint__text">кликни на мозг</div>
+                    </div>
+
+                    <div class="brain-radial-stage" id="brainRadialStage" aria-hidden="true">
+                        <div class="brain-path" id="brainPath"></div>
+                        <div class="brain-radial-ring brain-radial-ring-level1" id="brainLevel1">
+                            <button class="brain-radial-button type-r" type="button" data-code="r"><span>Практика</span></button>
+                            <button class="brain-radial-button type-i" type="button" data-code="i"><span>Исследование</span></button>
+                            <button class="brain-radial-button type-a" type="button" data-code="a"><span>Творчество</span></button>
+                            <button class="brain-radial-button type-s" type="button" data-code="s"><span>Общение</span></button>
+                            <button class="brain-radial-button type-e" type="button" data-code="e"><span>Лидерство</span></button>
+                            <button class="brain-radial-button type-c" type="button" data-code="c"><span>Порядок</span></button>
+                        </div>
+
+                        <div class="brain-radial-ring brain-radial-ring-level2" id="brainLevel2"></div>
+                        <div class="brain-radial-cloud" id="brainLevel3"></div>
+
+                        <div class="brain-final-card" id="brainFinalCard">
+                            <div class="brain-final-card__badge">Направление выбрано</div>
+                            <h3 class="brain-final-card__title" id="brainFinalTitle"></h3>
+                            <p class="brain-final-card__text" id="brainFinalText"></p>
+
+                            <div class="brain-final-card__actions">
+                                <a class="btn btn-primary" href="/test">Уточнить через тест</a>
+                                <button type="button" class="btn btn-secondary" onclick="alert('Тестовая страница')">
+                                    Записаться на консультацию
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="hero-text">Эта страница не должна быть доступна с главной.</p>
+        </div>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/brain-hero.js') }}" defer></script>
+</body>
+</html>
