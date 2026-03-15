@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, session
+from flask import Flask, render_template, request, jsonify, session, abort
 from questions import questions, questions_part2, interest_questions_teen, interest_scales, interest_questions_adult, interest_scales_adult
 from scoring import calculate_riasec, calculate_pairs_riasec, calculate_interest_map, calculate_interest_map_adult
 from pdf_report import create_pdf
@@ -13,6 +13,12 @@ app.secret_key = "riasec_secret_key"
 def landing():
     return render_template("landing.html")
 
+@app.route("/brain-preview")
+def brain_preview():
+    secret = request.args.get("key")
+    if secret != "tvoy-sekretnyy-klyuch-2026":
+        abort(404)
+    return render_template("brain-preview.html")
 
 @app.route("/test")
 def index():
