@@ -1,0 +1,401 @@
+{
+  "version": "v5",
+  "viewBox": [
+    0,
+    0,
+    1400,
+    1200
+  ],
+  "pieces": [
+    {
+      "id": "piece-r0c0",
+      "row": 0,
+      "col": 0,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 120,
+      "suggestedInitialOffset": {
+        "x": -35,
+        "y": -24,
+        "scale": 0.94
+      }
+    },
+    {
+      "id": "piece-r0c1",
+      "row": 0,
+      "col": 1,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 178,
+      "suggestedInitialOffset": {
+        "x": -21,
+        "y": -24,
+        "scale": 0.955
+      }
+    },
+    {
+      "id": "piece-r0c2",
+      "row": 0,
+      "col": 2,
+      "role": "result",
+      "icon": "target",
+      "suggestedDelayMs": 236,
+      "suggestedInitialOffset": {
+        "x": -7,
+        "y": -24,
+        "scale": 0.97
+      }
+    },
+    {
+      "id": "piece-r0c3",
+      "row": 0,
+      "col": 3,
+      "role": "tech",
+      "icon": "laptop",
+      "suggestedDelayMs": 294,
+      "suggestedInitialOffset": {
+        "x": 7,
+        "y": -24,
+        "scale": 0.94
+      }
+    },
+    {
+      "id": "piece-r0c4",
+      "row": 0,
+      "col": 4,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 352,
+      "suggestedInitialOffset": {
+        "x": 21,
+        "y": -24,
+        "scale": 0.955
+      }
+    },
+    {
+      "id": "piece-r0c5",
+      "row": 0,
+      "col": 5,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 410,
+      "suggestedInitialOffset": {
+        "x": 35,
+        "y": -24,
+        "scale": 0.97
+      }
+    },
+    {
+      "id": "piece-r1c0",
+      "row": 1,
+      "col": 0,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 468,
+      "suggestedInitialOffset": {
+        "x": -35,
+        "y": -12,
+        "scale": 0.955
+      }
+    },
+    {
+      "id": "piece-r1c1",
+      "row": 1,
+      "col": 1,
+      "role": "analysis",
+      "icon": "chart",
+      "suggestedDelayMs": 526,
+      "suggestedInitialOffset": {
+        "x": -21,
+        "y": -12,
+        "scale": 0.97
+      }
+    },
+    {
+      "id": "piece-r1c2",
+      "row": 1,
+      "col": 2,
+      "role": "creativity",
+      "icon": "palette",
+      "suggestedDelayMs": 584,
+      "suggestedInitialOffset": {
+        "x": -7,
+        "y": -12,
+        "scale": 0.94
+      }
+    },
+    {
+      "id": "piece-r1c3",
+      "row": 1,
+      "col": 3,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 642,
+      "suggestedInitialOffset": {
+        "x": 7,
+        "y": -12,
+        "scale": 0.955
+      }
+    },
+    {
+      "id": "piece-r1c4",
+      "row": 1,
+      "col": 4,
+      "role": "people",
+      "icon": "users",
+      "suggestedDelayMs": 700,
+      "suggestedInitialOffset": {
+        "x": 21,
+        "y": -12,
+        "scale": 0.97
+      }
+    },
+    {
+      "id": "piece-r1c5",
+      "row": 1,
+      "col": 5,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 758,
+      "suggestedInitialOffset": {
+        "x": 35,
+        "y": -12,
+        "scale": 0.94
+      }
+    },
+    {
+      "id": "piece-r2c0",
+      "row": 2,
+      "col": 0,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 816,
+      "suggestedInitialOffset": {
+        "x": -35,
+        "y": 0,
+        "scale": 0.97
+      }
+    },
+    {
+      "id": "piece-r2c1",
+      "row": 2,
+      "col": 1,
+      "role": "engineering",
+      "icon": "gear",
+      "suggestedDelayMs": 874,
+      "suggestedInitialOffset": {
+        "x": -21,
+        "y": 0,
+        "scale": 0.94
+      }
+    },
+    {
+      "id": "piece-r2c2",
+      "row": 2,
+      "col": 2,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 932,
+      "suggestedInitialOffset": {
+        "x": -7,
+        "y": 0,
+        "scale": 0.955
+      }
+    },
+    {
+      "id": "piece-r2c3",
+      "row": 2,
+      "col": 3,
+      "role": "science",
+      "icon": "flask",
+      "suggestedDelayMs": 990,
+      "suggestedInitialOffset": {
+        "x": 7,
+        "y": 0,
+        "scale": 0.97
+      }
+    },
+    {
+      "id": "piece-r2c4",
+      "row": 2,
+      "col": 4,
+      "role": "management",
+      "icon": "briefcase",
+      "suggestedDelayMs": 1048,
+      "suggestedInitialOffset": {
+        "x": 21,
+        "y": 0,
+        "scale": 0.94
+      }
+    },
+    {
+      "id": "piece-r2c5",
+      "row": 2,
+      "col": 5,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 1106,
+      "suggestedInitialOffset": {
+        "x": 35,
+        "y": 0,
+        "scale": 0.955
+      }
+    },
+    {
+      "id": "piece-r3c0",
+      "row": 3,
+      "col": 0,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 1164,
+      "suggestedInitialOffset": {
+        "x": -35,
+        "y": 12,
+        "scale": 0.94
+      }
+    },
+    {
+      "id": "piece-r3c1",
+      "row": 3,
+      "col": 1,
+      "role": "education",
+      "icon": "cap",
+      "suggestedDelayMs": 1222,
+      "suggestedInitialOffset": {
+        "x": -21,
+        "y": 12,
+        "scale": 0.955
+      }
+    },
+    {
+      "id": "piece-r3c2",
+      "row": 3,
+      "col": 2,
+      "role": "communication",
+      "icon": "chat",
+      "suggestedDelayMs": 1280,
+      "suggestedInitialOffset": {
+        "x": -7,
+        "y": 12,
+        "scale": 0.97
+      }
+    },
+    {
+      "id": "piece-r3c3",
+      "row": 3,
+      "col": 3,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 1338,
+      "suggestedInitialOffset": {
+        "x": 7,
+        "y": 12,
+        "scale": 0.94
+      }
+    },
+    {
+      "id": "piece-r3c4",
+      "row": 3,
+      "col": 4,
+      "role": "finance",
+      "icon": "coins",
+      "suggestedDelayMs": 1396,
+      "suggestedInitialOffset": {
+        "x": 21,
+        "y": 12,
+        "scale": 0.955
+      }
+    },
+    {
+      "id": "piece-r3c5",
+      "row": 3,
+      "col": 5,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 1454,
+      "suggestedInitialOffset": {
+        "x": 35,
+        "y": 12,
+        "scale": 0.97
+      }
+    },
+    {
+      "id": "piece-r4c0",
+      "row": 4,
+      "col": 0,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 1512,
+      "suggestedInitialOffset": {
+        "x": -35,
+        "y": 24,
+        "scale": 0.955
+      }
+    },
+    {
+      "id": "piece-r4c1",
+      "row": 4,
+      "col": 1,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 1570,
+      "suggestedInitialOffset": {
+        "x": -21,
+        "y": 24,
+        "scale": 0.97
+      }
+    },
+    {
+      "id": "piece-r4c2",
+      "row": 4,
+      "col": 2,
+      "role": "result",
+      "icon": "star",
+      "suggestedDelayMs": 1628,
+      "suggestedInitialOffset": {
+        "x": -7,
+        "y": 24,
+        "scale": 0.94
+      }
+    },
+    {
+      "id": "piece-r4c3",
+      "row": 4,
+      "col": 3,
+      "role": "tech",
+      "icon": "code",
+      "suggestedDelayMs": 1686,
+      "suggestedInitialOffset": {
+        "x": 7,
+        "y": 24,
+        "scale": 0.955
+      }
+    },
+    {
+      "id": "piece-r4c4",
+      "row": 4,
+      "col": 4,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 1744,
+      "suggestedInitialOffset": {
+        "x": 21,
+        "y": 24,
+        "scale": 0.97
+      }
+    },
+    {
+      "id": "piece-r4c5",
+      "row": 4,
+      "col": 5,
+      "role": "base",
+      "icon": null,
+      "suggestedDelayMs": 1802,
+      "suggestedInitialOffset": {
+        "x": 35,
+        "y": 24,
+        "scale": 0.94
+      }
+    }
+  ]
+}
