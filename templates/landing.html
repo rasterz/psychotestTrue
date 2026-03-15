@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<section class="hero">
+<section class="hero hero-brain">
     <div class="hero-overlay"></div>
 
     <div class="container hero-grid">
@@ -20,6 +20,76 @@
                 интересы и выбрать направление
                 без лишней тревоги
             </h1>
+            <div class="hero-brain-inline hero-brain-inline-shifted">
+    <div class="brain-radial-anchor" id="brainRadialShell" data-level="0">
+        <div class="brain-radial-backdrop" id="brainRadialBackdrop" aria-hidden="true"></div>
+
+
+        <button class="brain-core-button" id="brainCoreButton" type="button" aria-expanded="false" aria-label="Открыть направления Холланда">
+            <div class="hero-brain-mini"
+                 data-svg-url="{{ url_for('static', filename='images/brain-puzzle-layers.svg') }}"
+                 data-manifest-url="{{ url_for('static', filename='data/brain-puzzle-manifest.json') }}"
+                 data-fallback-url="{{ url_for('static', filename='images/brain-puzzle-preview-light.png') }}"
+                 aria-hidden="true">
+            </div>
+        </button>
+
+        <div class="brain-core-hint" id="brainCoreHint">
+            <div class="brain-core-hint__title">Запусти мыслительный процесс</div>
+            <div class="brain-core-hint__text">кликни на мозг</div>
+        </div>
+
+        <div class="brain-radial-stage" id="brainRadialStage" aria-hidden="true">
+
+            <div class="brain-path" id="brainPath"></div>
+
+            <div class="brain-radial-ring brain-radial-ring-level1" id="brainLevel1">
+                <button class="brain-radial-button type-r" type="button" data-code="r">
+                    <span>Практика</span>
+                </button>
+
+                <button class="brain-radial-button type-i" type="button" data-code="i">
+                    <span>Исследование</span>
+                </button>
+
+                <button class="brain-radial-button type-a" type="button" data-code="a">
+                    <span>Творчество</span>
+                </button>
+
+                <button class="brain-radial-button type-s" type="button" data-code="s">
+                    <span>Общение</span>
+                </button>
+
+                <button class="brain-radial-button type-e" type="button" data-code="e">
+                    <span>Лидерство</span>
+                </button>
+
+                <button class="brain-radial-button type-c" type="button" data-code="c">
+                    <span>Порядок</span>
+                </button>
+            </div>
+
+            <div class="brain-radial-ring brain-radial-ring-level2" id="brainLevel2"></div>
+
+            <div class="brain-radial-cloud" id="brainLevel3"></div>
+
+            <div class="brain-final-card" id="brainFinalCard">
+                <div class="brain-final-card__badge">Направление выбрано</div>
+                <h3 class="brain-final-card__title" id="brainFinalTitle"></h3>
+                <p class="brain-final-card__text" id="brainFinalText"></p>
+
+                <div class="brain-final-card__actions">
+                    <a class="btn btn-primary" href="/test">Уточнить через тест</a>
+                    <button type="button" class="btn btn-secondary consultation-open-btn" id="brainConsultationBtn">
+                        Записаться на консультацию
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
             <p class="hero-text">
                 Если вам важно, чтобы с ребенком работали бережно - вам сюда.
@@ -32,16 +102,16 @@
             </div>
         </div>
 
-        <div class="hero-image-wrap">
+            <div class="hero-image-wrap">
             <div class="hero-image-card">
                 <img src="{{ url_for('static', filename='images/veronika-hero.jpg') }}"
-                     alt="Вероника Илясова">
+                     alt="Профориентолог Вероника Илясова">
             </div>
         </div>
     </div>
 </section>
 
-        <section class="about">
+<section class="about">
             <div class="container about-grid">
                 <div class="about-image-wrap">
                     <div class="about-image-card">
@@ -82,7 +152,8 @@
                     </p>
 
                 </div>
-    </section>
+            </div>
+        </section>
 
 <section class="consultations">
     <div class="container">
@@ -424,6 +495,10 @@
     </div>
 </div>
 
+<script src="{{ url_for('static', filename='js/brain-hero.js') }}" defer></script>
+
+
+
 <script>
     const consultationModal = document.getElementById('consultationModal');
     const openConsultationModalBtn = document.getElementById('openConsultationModal');
@@ -537,30 +612,7 @@
     updateContactField('telegram');
 </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    if (!isMobile) return;
 
-    const tooltip = document.querySelector(".test-tooltip");
-    const buttonWrap = document.querySelector(".test-button-wrap");
-
-    if (!tooltip || !buttonWrap) return;
-
-    const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                tooltip.classList.add("mobile-tooltip-visible");
-                obs.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.35
-    });
-
-    observer.observe(buttonWrap);
-});
-</script>
 
 
 </body>
