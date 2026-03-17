@@ -492,10 +492,21 @@
                   rows="5"
                   placeholder="Опишите ваши пожелания по профориентации, например возраст ребенка и в какой срок желаете провести работу"></textarea>
     </div>
-
-    <div class="consultation-form__actions">
-        <button type="submit" class="btn btn-primary">Отправить заявку</button>
-    </div>
+            <div class="consultation-form__group consultation-consent-group">
+                <label class="consultation-consent">
+                    <input type="checkbox" id="consultationPrivacyConsent" required>
+                    <span>
+                        Я соглашаюсь с
+                        <a href="http://ilyasova.tilda.ws/politika" target="_blank" rel="noopener noreferrer">
+                            политикой обработки персональных данных
+                        </a>
+                            и даю согласие на обработку персональных данных
+                    </span>
+                </label>
+            </div>
+        <div class="consultation-form__actions">
+            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+        </div>
 </form>
     </div>
 </div>
@@ -583,8 +594,9 @@
             last_name: document.getElementById('clientSurname').value.trim(),
             contact_method: selectedMethod,
             contact_value: document.getElementById('contactValue').value.trim(),
-            message: document.getElementById('consultationMessage').value.trim()
-        };
+            message: document.getElementById('consultationMessage').value.trim(),
+            privacy_consent: document.getElementById('consultationPrivacyConsent').checked
+        }
 
         const response = await fetch('/send-consultation-request', {
             method: 'POST',

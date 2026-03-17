@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CRM заявки</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/crm.css') }}">
+
+</head>
+<body>
+    <div class="topbar">
+        <h1>CRM заявки</h1>
+        <a href="{{ url_for('crm_logout') }}" class="logout">Выйти</a>
+    </div>
+
+    <div class="container">
+        <div class="view-switch">
+            <button type="button" class="view-btn is-active" id="cardsViewBtn">Карточки</button>
+            <button type="button" class="view-btn" id="tableViewBtn">Таблица</button>
+            <a href="{{ url_for('crm_export') }}" class="export-btn" id="exportBtn" style="display:none;">
+                Скачать Excel
+            </a>
+        </div>
+        <div class="crm-tools">
+    <div class="crm-search">
+        <input
+            type="text"
+            id="crmSearchInput"
+            placeholder="Поиск: имя, контакт, город, код Холланда..."
+        >
+    </div>
+
+    <div class="crm-filter">
+        <button type="button" class="filter-btn is-active" data-filter="all">Все</button>
+        <button type="button" class="filter-btn" data-filter="test">Тест</button>
+        <button type="button" class="filter-btn" data-filter="consultation">Консультация</button>
+    </div>
+            <button type="button" class="archive-toggle-btn" id="archiveToggleBtn">
+            Архив
+            </button>
+</div>
+
+<div class="no-results" id="noResultsBox">
+    Ничего не найдено
+</div>
+        {% if leads %}
+        <div class="cards-wrap" id="cardsWrap">
+            {% for lead in leads %}
+                <div
+                    class="lead-card crm-item"
+                    data-lead-id="{{ lead.id }}"
+                    data-source="{{ lead.source or '' }}"
+                    data-created-at="{{ lead.created_at or '' }}"
+                    data-status="{{ lead.status or 'new' }}"
+                    data-search="{{ (
+                        (lead.full_name or '') ~ ' ' ~
+                        (lead.first_name or '') ~ ' ' ~
+                        (lead.last_name or '') ~ ' ' ~
+                        (lead.contact_value or '') ~ ' ' ~
+                        (lead.contact_method or '') ~ ' ' ~
+                        (lead.city or '') ~ ' ' ~
+                        (lead.category or '') ~ ' ' ~
+                        (lead.holland_code or '') ~ ' ' ~
+                        (lead.request_message or '')
+                    )|lower }}"
+                >
+
+    <div class="lead-header">
+        <div class="lead-main">
+            <div class="lead-name-wrap">
+            <div class="lead-name" data-bind="full_name">
+            {{ lead.full_name or lead.first_name or 'Без имени' }}
+            </div>
+            <span class="lead-edited-badge" id="edited-badge-{{ lead.id }}">
+                Изменено
+            </span>
+            </div>
+
+            <div class="lead-subline">
+                <span class="badge">
+                    {{ 'Тест' if lead.source == 'test' else 'Консультация' }}
+                </span>
+
+                {% if lead.consent_given %}
+                    <span class="badge badge-muted">Согласие: да</span>
+                {% else %}
+                    <span class="badge badge-muted">Согласие: нет</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+        <div class="lead-actions">
+        <div class="status-box">
+            <label class="status-label" for="status-{{ lead.id }}">Статус клиента</label>
+            <select
+                id="status-{{ lead.id }}"
+                class="status-select"
+                onchange="updateLeadStatus({{ lead.id }}, this.value)"
+            >
+                <option value="new" {% if (lead.status or 'new') == 'new' %}selected{% endif %}>Новый</option>
+                <option value="in_progress" {% if lead.status == 'in_progress' %}selected{% endif %}>В работе</option>
+                <option value="consultation" {% if lead.status == 'consultation' %}selected{% endif %}>Консультация</option>
+                <option value="done" {% if lead.status == 'done' %}selected{% endif %}>Завершён</option>
+                <option value="archive" {% if lead.status == 'archive' %}selected{% endif %}>Архив</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="quick-actions">
+        <button
+            type="button"
+            class="quick-action-btn"
+            onclick="openLeadContact('{{ (lead.contact_value or '')|e }}', '{{ (lead.contact_method or '')|e }}')"
+        >
+            Написать
+        </button>
+
+        <button
+            type="button"
+            class="quick-action-btn quick-action-btn-muted"
+            onclick="copyLeadContact('{{ (lead.contact_value or '')|e }}')"
+        >
+            Скопировать
+        </button>
+
+        {% if (lead.status or 'new') != 'archive' %}
+            <button
+                type="button"
+                class="quick-action-btn quick-action-btn-danger js-archive-action"
+                onclick="updateLeadStatus({{ lead.id }}, 'archive')"
+            >
+                В архив
+            </button>
+            {% else %}
+            <button
+                type="button"
+                class="quick-action-btn quick-action-btn-return js-archive-action"
+                onclick="updateLeadStatus({{ lead.id }}, 'in_progress')"
+            >
+                Вернуть в работу
+            </button>
+        {% endif %}
+            {% if (lead.status or 'new') == 'archive' %}
+                <button
+                    type="button"
+                    class="quick-action-btn quick-action-btn-danger-strong js-delete-forever-action"
+                    data-lead-id="{{ lead.id }}"
+                    onclick="this.dataset.confirmDelete === '1' ? deleteLeadForever({{ lead.id }}, true) : deleteLeadForever({{ lead.id }})"
+                >
+                    Удалить навсегда
+                </button>
+                {% endif %}
+    </div>
+
+    <div class="lead-note-box">
+    <label class="note-label" for="note-{{ lead.id }}">Заметки специалиста</label>
+
+    <div class="lead-notes-list" id="notes-list-{{ lead.id }}">
+        {% if lead.notes %}
+            {% for note in lead.notes %}
+                <div class="lead-note-item" id="note-item-{{ note.id }}">
+                    <div class="lead-note-head">
+                        <div class="lead-note-meta">
+                            {% if note.created_at %}
+                                {{ note.created_at[8:10] }}.{{ note.created_at[5:7] }}.{{ note.created_at[0:4] }} • {{ note.created_at[11:16] }}
+                            {% else %}
+                                —
+                            {% endif %}
+                        </div>
+
+                        <button
+                            type="button"
+                            class="delete-note-btn"
+                            onclick="deleteLeadNote({{ note.id }})"
+                        >
+                            Удалить
+                        </button>
+                    </div>
+
+    <div class="lead-note-text">{{ note.note_text }}</div>
+</div>
+            {% endfor %}
+        {% else %}
+            <div class="lead-notes-empty" id="notes-empty-{{ lead.id }}">
+                Пока нет заметок
+            </div>
+        {% endif %}
+    </div>
+
+    <textarea
+        id="note-{{ lead.id }}"
+        class="lead-note-textarea"
+        placeholder="Добавить новую заметку..."
+    ></textarea>
+
+    <button
+        type="button"
+        class="save-note-btn"
+        onclick="addLeadNote({{ lead.id }})"
+    >
+        Добавить заметку
+    </button>
+</div>
+
+    <div class="lead-top-grid">
+        <div class="mini-field">
+            <div class="mini-title">Дата</div>
+            <div class="mini-value">{{ lead.created_at or '—' }}</div>
+        </div>
+
+        <div class="mini-field">
+            <div class="mini-title">Контакт</div>
+            <div class="mini-value" data-bind="contact_value">{{ lead.contact_value or '—' }}</div>
+        </div>
+
+        <div class="mini-field">
+            <div class="mini-title">Способ связи</div>
+            <div class="mini-value" data-bind="contact_method">{{ lead.contact_method or '—' }}</div>
+        </div>
+
+        <div class="mini-field">
+            <div class="mini-title">Возраст / категория</div>
+            <div class="mini-value">
+                <span data-bind="age">{{ lead.age or '—' }}</span>
+                <span data-bind-separator="category">{% if lead.category %}<br>{% endif %}</span>
+                <span data-bind="category">{{ lead.category or '' }}</span>
+            </div>
+        </div>
+
+        <div class="mini-field">
+            <div class="mini-title">Город / код Холланда</div>
+            <div class="mini-value">
+                <span data-bind="city">{{ lead.city or '—' }}</span>
+                {% if lead.holland_code %}<br><strong>{{ lead.holland_code }}</strong>{% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="lead-sections">
+
+        <div class="section-box">
+            <div class="section-title">Баллы Холланда</div>
+
+            {% if lead.scores %}
+                <div class="score-pills">
+                    {% for key, value in lead.scores.items() %}
+                        <div class="score-pill">
+                            <span class="score-letter">{{ key }}</span>
+                            <span>{{ value }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="mini-value">—</div>
+            {% endif %}
+        </div>
+
+        <div class="section-box">
+            <div class="section-title">Топ интересов</div>
+
+            {% if lead.interests %}
+                <div class="interest-pills">
+                    {% for item in lead.interests[:6] %}
+                        <div class="interest-pill">
+                            <strong>{{ item.name }}</strong>
+                            <div class="interest-meta">
+                                {{ item.score }} · {{ item.level }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="mini-value">—</div>
+            {% endif %}
+        </div>
+
+    </div>
+
+    {% if lead.request_message %}
+        <div class="message-box">
+            <div class="section-title">Запрос / сообщение</div>
+            <div class="message-text" data-bind="request_message">{{ lead.request_message }}</div>
+        </div>
+    {% endif %}
+
+    </div>
+                                {% endfor %}
+    </div>
+
+    <div class="table-scroll-top" id="tableScrollTop">
+        <div class="table-scroll-top-inner" id="tableScrollTopInner"></div>
+    </div>
+
+    <div class="table-wrap" id="tableWrap">
+        <table class="crm-table">
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Источник</th>
+                    <th>Имя</th>
+                    <th>Контакт</th>
+                    <th>Способ</th>
+                    <th>Возраст</th>
+                    <th>Город</th>
+                    <th>Категория</th>
+                    <th>Код Холланда</th>
+                    <th>Согласие</th>
+                    <th>Топ интересов</th>
+                    <th>Сообщение</th>
+                    <th>Статус</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for lead in leads %}
+        <tr
+    class="crm-item"
+    data-lead-id="{{ lead.id }}"
+    data-source="{{ lead.source or '' }}"
+    data-created-at="{{ lead.created_at or '' }}"
+    data-status="{{ lead.status or 'new' }}"
+    data-search="{{ (
+        (lead.full_name or '') ~ ' ' ~
+        (lead.first_name or '') ~ ' ' ~
+        (lead.last_name or '') ~ ' ' ~
+        (lead.contact_value or '') ~ ' ' ~
+        (lead.contact_method or '') ~ ' ' ~
+        (lead.city or '') ~ ' ' ~
+        (lead.category or '') ~ ' ' ~
+        (lead.holland_code or '') ~ ' ' ~
+        (lead.request_message or '')
+    )|lower }}"
+>
+<td>{{ lead.created_at[:16].replace('-', '.').replace(' ', ' • ') }}</td>
+<td>{{ 'Тест' if lead.source == 'test' else 'Консультация' }}</td>
+
+<td>
+    <input
+        type="text"
+        class="table-edit-input"
+        value="{{ lead.full_name or lead.first_name or '' }}"
+        onchange="saveLeadField({{ lead.id }}, 'full_name', this.value)"
+    >
+</td>
+
+<td>
+    <input
+        type="text"
+        class="table-edit-input"
+        value="{{ lead.contact_value or '' }}"
+        onchange="saveLeadField({{ lead.id }}, 'contact_value', this.value)"
+    >
+</td>
+
+<td>
+    <select
+        class="table-edit-select"
+        onchange="saveLeadField({{ lead.id }}, 'contact_method', this.value)"
+    >
+        <option value="" {% if not lead.contact_method %}selected{% endif %}>—</option>
+        <option value="telegram" {% if lead.contact_method == 'telegram' %}selected{% endif %}>telegram</option>
+        <option value="max" {% if lead.contact_method == 'max' %}selected{% endif %}>max</option>
+        <option value="vk" {% if lead.contact_method == 'vk' %}selected{% endif %}>vk</option>
+        <option value="phone" {% if lead.contact_method == 'phone' %}selected{% endif %}>phone</option>
+        <option value="unknown" {% if lead.contact_method == 'unknown' %}selected{% endif %}>unknown</option>
+    </select>
+</td>
+
+<td>
+    <input
+        type="text"
+        class="table-edit-input table-edit-input-sm"
+        value="{{ lead.age or '' }}"
+        onchange="saveLeadField({{ lead.id }}, 'age', this.value)"
+    >
+</td>
+
+<td>
+    <input
+        type="text"
+        class="table-edit-input"
+        value="{{ lead.city or '' }}"
+        onchange="saveLeadField({{ lead.id }}, 'city', this.value)"
+    >
+</td>
+
+<td>
+    <select
+        class="table-edit-select"
+        onchange="saveLeadField({{ lead.id }}, 'category', this.value)"
+    >
+        <option value="" {% if not lead.category %}selected{% endif %}>—</option>
+        <option value="Подросток" {% if lead.category == 'Подросток' %}selected{% endif %}>Подросток</option>
+        <option value="Взрослый" {% if lead.category == 'Взрослый' %}selected{% endif %}>Взрослый</option>
+    </select>
+</td>
+
+<td>
+    {% if lead.holland_code %}
+        <span class="table-code">{{ lead.holland_code }}</span>
+    {% else %}
+        —
+    {% endif %}
+</td>
+
+<td>
+    {% if lead.consent_given %}
+        <span class="table-status table-status-ok">Да</span>
+    {% else %}
+        <span class="table-status table-status-bad">Нет</span>
+    {% endif %}
+</td>
+
+<td>
+    {% if lead.interests %}
+        <div class="table-interests">
+            {% for item in lead.interests[:3] %}
+                <div class="table-interest-item">
+                    <strong>{{ item.name }}</strong>
+                    <div class="table-interest-meta">
+                        {{ item.score }} · {{ item.level }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        —
+    {% endif %}
+</td>
+
+<td>
+    <textarea
+        class="table-edit-textarea"
+        onchange="saveLeadField({{ lead.id }}, 'request_message', this.value)"
+    >{{ lead.request_message or '' }}</textarea>
+</td>
+
+<td>
+    <select
+        id="table-status-{{ lead.id }}"
+        class="table-edit-select table-status-select"
+        onchange="updateLeadStatus({{ lead.id }}, this.value)"
+    >
+        <option value="new" {% if (lead.status or 'new') == 'new' %}selected{% endif %}>Новый</option>
+        <option value="in_progress" {% if lead.status == 'in_progress' %}selected{% endif %}>В работе</option>
+        <option value="consultation" {% if lead.status == 'consultation' %}selected{% endif %}>Консультация</option>
+        <option value="done" {% if lead.status == 'done' %}selected{% endif %}>Завершён</option>
+        <option value="archive" {% if lead.status == 'archive' %}selected{% endif %}>Архив</option>
+    </select>
+</td>
+
+         <td id="table-actions-{{ lead.id }}">
+            {% if (lead.status or 'new') == 'archive' %}
+            <button
+                type="button"
+                class="table-delete-btn js-table-delete-forever-action"
+                data-lead-id="{{ lead.id }}"
+                onclick="deleteLeadForever({{ lead.id }}, this)"
+            >
+                Удалить
+            </button>
+            {% else %}
+            —
+            {% endif %}
+        </td>
+
+    </tr>
+    {% endfor %}
+</tbody>
+        </table>
+    </div>
+{% else %}
+            <div class="empty">
+                Пока нет заявок
+            </div>
+        {% endif %}
+    </div>
+
+<script src="{{ url_for('static', filename='js/crm.js') }}"></script>
+</body>
+</html>

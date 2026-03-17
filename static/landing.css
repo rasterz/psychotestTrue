@@ -2604,3 +2604,34 @@ body.modal-open {
 .brain-radial-anchor[data-level="4"] .brain-core-button {
     transform: scale(0.92) !important;
 }
+
+.consultation-consent-group {
+    margin-top: -4px;
+}
+
+.consultation-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    color: #5c6b66;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.consultation-consent input {
+    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    accent-color: #1f5c4f;
+}
+
+.consultation-consent a {
+    color: #1f5c4f;
+    text-decoration: underline;
+}
+
+.consultation-consent a:hover {
+    color: #17493e;
+}
