@@ -1,6 +1,5 @@
 venv/
 __pycache__/
-*.pyc
 *.pyo
 *.pyd
 .idea/
@@ -8,3 +7,7 @@ __pycache__/
 *.log
 result_*.pdf
 gunicorn.ctl
+.env
+crm.db
+*.pyc
+instance/

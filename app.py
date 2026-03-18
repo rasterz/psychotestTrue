@@ -12,14 +12,18 @@ from openpyxl import Workbook
 from openpyxl.styles import Font
 from flask import send_file
 import random
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "riasec_secret_key"
+app.secret_key = os.getenv("SECRET_KEY", "dev-secret-change-me")
 
-DATABASE = "crm.db"
-CRM_LOGIN = "ilyasova"
-CRM_PASSWORD = "crm2000ilyasova"
+DATABASE = os.getenv("DATABASE_PATH", "crm.db")
+CRM_LOGIN = os.getenv("CRM_LOGIN", "")
+CRM_PASSWORD = os.getenv("CRM_PASSWORD", "")
+BRAIN_PREVIEW_KEY = os.getenv("BRAIN_PREVIEW_KEY", "")
 
 
 def get_db_connection():
@@ -155,7 +159,7 @@ def landing():
 @app.route("/brain-preview")
 def brain_preview():
     secret = request.args.get("key")
-    if secret != "tvoy-sekretnyy-klyuch-2026":
+    if not BRAIN_PREVIEW_KEY or secret != BRAIN_PREVIEW_KEY:
         abort(404)
     return render_template("brain-preview.html")
 
