@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="HOT FIXXXXXX">
+    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="live version 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/pdf_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/pdf_report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/scoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/scoring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/crm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/crm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/test3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test3.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +56,10 @@
     &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.add_bind_token.executor&quot;: &quot;Run&quot;,
     &quot;Python.app.executor&quot;: &quot;Run&quot;,
     &quot;Python.check_crm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.db.executor&quot;: &quot;Run&quot;,
     &quot;Python.interpretations.executor&quot;: &quot;Run&quot;,
     &quot;Python.pdf_report.executor&quot;: &quot;Run&quot;,
     &quot;Python.python check_crm.executor&quot;: &quot;Run&quot;,
@@ -280,7 +272,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773864934475</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="HOT FIXXXXXX">
+      <option name="closed" value="true" />
+      <created>1774000205708</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1774000205708</updated>
+    </task>
+    <task id="LOCAL-00024" summary="live version 1">
+      <option name="closed" value="true" />
+      <created>1774021285155</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1774021285155</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -307,6 +315,7 @@
     <MESSAGE value="some def NEW VERSION" />
     <MESSAGE value="mobile comfort check update" />
     <MESSAGE value="HOT FIXXXXXX" />
-    <option name="LAST_COMMIT_MESSAGE" value="HOT FIXXXXXX" />
+    <MESSAGE value="live version 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="live version 1" />
   </component>
 </project>
