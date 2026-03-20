@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="favicon io">
+    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="HOT FIXXXXXX">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/pdf_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/pdf_report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/questions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/scoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/scoring.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/static/landing.css" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/static/landing.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/landing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/templates/crm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/crm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/result.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/templates/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/templates/test3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test3.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -57,23 +61,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.app.executor": "Run",
-    "Python.check_crm.executor": "Run",
-    "Python.interpretations.executor": "Run",
-    "Python.pdf_report.executor": "Run",
-    "Python.python check_crm.executor": "Run",
-    "Python.questions.executor": "Run",
-    "Python.scoring.executor": "Run",
-    "Python.telegram_sender.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.check_crm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.interpretations.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pdf_report.executor&quot;: &quot;Run&quot;,
+    &quot;Python.python check_crm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.questions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scoring.executor&quot;: &quot;Run&quot;,
+    &quot;Python.telegram_sender.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.smartKeys&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Админ\PycharmProjects\phychotest\static\css" />
@@ -242,7 +248,39 @@
       <option name="project" value="LOCAL" />
       <updated>1773573166301</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="CRM now beta 0.12 version">
+      <option name="closed" value="true" />
+      <created>1773715511041</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1773715511041</updated>
+    </task>
+    <task id="LOCAL-00020" summary="some def">
+      <option name="closed" value="true" />
+      <created>1773860757936</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1773860757936</updated>
+    </task>
+    <task id="LOCAL-00021" summary="some def NEW VERSION">
+      <option name="closed" value="true" />
+      <created>1773862111163</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1773862111163</updated>
+    </task>
+    <task id="LOCAL-00022" summary="mobile comfort check update">
+      <option name="closed" value="true" />
+      <created>1773864934475</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1773864934475</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,17 +302,11 @@
     <MESSAGE value="test 2, delete red color from second choice. All green" />
     <MESSAGE value="brain in game" />
     <MESSAGE value="favicon io" />
-    <option name="LAST_COMMIT_MESSAGE" value="favicon io" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../phychotest/app.py</url>
-          <line>875</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="CRM now beta 0.12 version" />
+    <MESSAGE value="some def" />
+    <MESSAGE value="some def NEW VERSION" />
+    <MESSAGE value="mobile comfort check update" />
+    <MESSAGE value="HOT FIXXXXXX" />
+    <option name="LAST_COMMIT_MESSAGE" value="HOT FIXXXXXX" />
   </component>
 </project>
