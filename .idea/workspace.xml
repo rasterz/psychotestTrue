@@ -4,24 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="live version 22">
+    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="NEW PDF'S FOR ALL TESTS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/cattell_friendly_pdf_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/cattell_friendly_pdf_report.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/cattell_pdf_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/cattell_pdf_report.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/pdf_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/pdf_report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/questions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/routes/crm_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/routes/crm_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/schein_pdf_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/schein_pdf_report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/services/cattell_pdf_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/services/cattell_pdf_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/services/cattell_result_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/services/cattell_result_pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/services/pdf_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/services/pdf_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/services/schein_pdf_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/services/schein_pdf_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/services/schein_result_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/services/schein_result_pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/services/test_result_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/services/test_result_pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/cattell_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/cattell_result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/static/css/crm.css" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/static/css/crm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/static/js/crm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/static/js/crm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/templates/cattell_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/cattell_test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/templates/crm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/crm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/schein_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/schein_result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/templates/schein_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/schein_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/templates/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/templates/test3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test3.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +74,7 @@
     &quot;Python.db.executor&quot;: &quot;Run&quot;,
     &quot;Python.interpretations.executor&quot;: &quot;Run&quot;,
     &quot;Python.pdf_report.executor&quot;: &quot;Run&quot;,
+    &quot;Python.preview_holland_pdfs.executor&quot;: &quot;Run&quot;,
     &quot;Python.python check_crm.executor&quot;: &quot;Run&quot;,
     &quot;Python.questions.executor&quot;: &quot;Run&quot;,
     &quot;Python.scoring.executor&quot;: &quot;Run&quot;,
@@ -328,7 +325,23 @@
       <option name="project" value="LOCAL" />
       <updated>1774033533121</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="live version 22">
+      <option name="closed" value="true" />
+      <created>1774051534115</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1774051534115</updated>
+    </task>
+    <task id="LOCAL-00029" summary="NEW PDF'S FOR ALL TESTS">
+      <option name="closed" value="true" />
+      <created>1774220905020</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1774220905020</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -357,6 +370,7 @@
     <MESSAGE value="HOT FIXXXXXX" />
     <MESSAGE value="live version 1" />
     <MESSAGE value="live version 22" />
-    <option name="LAST_COMMIT_MESSAGE" value="live version 22" />
+    <MESSAGE value="NEW PDF'S FOR ALL TESTS" />
+    <option name="LAST_COMMIT_MESSAGE" value="NEW PDF'S FOR ALL TESTS" />
   </component>
 </project>
