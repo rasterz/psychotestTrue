@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="NEW PDF'S FOR ALL TESTS">
+    <list default="true" id="4be2f5e2-50e9-45e0-8c74-7d1a40c787a1" name="Changes" comment="Holland from token in card-client v.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/cattell_friendly_pdf_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/cattell_friendly_pdf_report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/cattell_pdf_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/cattell_pdf_report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phychotest/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/routes/crm_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/routes/crm_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/static/css/crm.css" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/static/css/crm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/static/js/crm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/static/js/crm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/cattell_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/cattell_test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/crm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/crm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/schein_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/schein_test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phychotest/templates/test3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/test3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phychotest/templates/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/../phychotest/templates/landing.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -79,6 +70,8 @@
     &quot;Python.questions.executor&quot;: &quot;Run&quot;,
     &quot;Python.scoring.executor&quot;: &quot;Run&quot;,
     &quot;Python.telegram_sender.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_create_course.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_sql.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -341,7 +334,23 @@
       <option name="project" value="LOCAL" />
       <updated>1774220905020</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="live ping test's in panel GRRRYAAA">
+      <option name="closed" value="true" />
+      <created>1774289957838</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1774289957838</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Holland from token in card-client v.1">
+      <option name="closed" value="true" />
+      <created>1774297702980</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1774297702980</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -371,6 +380,8 @@
     <MESSAGE value="live version 1" />
     <MESSAGE value="live version 22" />
     <MESSAGE value="NEW PDF'S FOR ALL TESTS" />
-    <option name="LAST_COMMIT_MESSAGE" value="NEW PDF'S FOR ALL TESTS" />
+    <MESSAGE value="live ping test's in panel GRRRYAAA" />
+    <MESSAGE value="Holland from token in card-client v.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Holland from token in card-client v.1" />
   </component>
 </project>
